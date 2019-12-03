@@ -180,9 +180,31 @@
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 
   <script>
+
+(function (w) {
+
+    w.URLSearchParams = w.URLSearchParams || function (searchString) {
+        var self = this;
+        self.searchString = searchString;
+        self.get = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+            if (results == null) {
+                return null;
+            }
+            else {
+                return decodeURI(results[1]) || 0;
+            }
+        };
+    }
+
+    })(window)
+
     var url = window.location.href;
     var queryParamIndex = url.lastIndexOf('?');
-    var queryParams = new URLSearchParams(url.slice(queryParamIndex,));
+    var queryParams = new URLSearchParams(url.slice(queryParamIndex));
+
+
+
     $.ajax({
       url: 'http://160.16.80.140/content/' + queryParams.get('id'), success: function (data) {
         var result = JSON.parse(data);
