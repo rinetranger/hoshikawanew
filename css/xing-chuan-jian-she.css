@@ -841,6 +841,7 @@ figure {
 .top-title-wrapper {
   margin-bottom: 100px;
   text-align: center;
+  color: steelblue;
 }
 
 .top-title-wrapper.left {
@@ -1033,6 +1034,7 @@ figure {
 .features-title {
   margin-bottom: 15px;
   font-size: 19px;
+  color: darkcyan;
 }
 
 .social-text-wrapper {
@@ -1406,6 +1408,7 @@ figure {
   margin-top: 0px;
   margin-bottom: 3px;
   font-size: 22px;
+  color: cornflowerblue;
 }
 
 .team-photo {
@@ -1919,6 +1922,7 @@ figure {
 
 .heading {
   font-size: 29px;
+  color: darkcyan;
 }
 
 .paragraph {
@@ -3281,3 +3285,6 @@ html.w-mod-js *[data-ix="fade-on-scroll-2"] {
   grid-row-end: 3;
 }
 
+.small-title {
+  color: darkcyan;
+}
