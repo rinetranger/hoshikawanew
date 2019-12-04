@@ -2416,7 +2416,7 @@ figure {
   margin-top: 78px;
   margin-bottom: 0px;
   margin-left: 20px;
-  padding-top: 0px;
+  padding: 0px 10px 0px 8px;
   border-style: solid none;
   border-width: 1px;
   border-color: #fff #000 #fff #fff;
