@@ -2414,7 +2414,7 @@ figure {
 .latest-news {
   display: block;
   width: 50%;
-  max-height: 604px;
+  /* max-height: 604px; */
   max-width: 400px;
   min-width: 340px;
   margin-top: 78px;
