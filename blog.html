@@ -103,6 +103,16 @@
       </div><img src="images/shape-3.png" width="100" alt="" class="shape-4 in-sub w-hidden-tiny"><img src="images/shape-4.png" width="100" alt="" class="shape-5 w-hidden-tiny">
       <div class="scroll-down-wrapper">
         <div class="container w-container">
+          <div class="archive">
+            <div class="text-block-3">アーカイブ</div>
+            <ul id="blog-archive" class="blog-archive">
+              <!-- <li class="blog-archive-list 2020 top">- 2020年の記事 (34)</li>
+              <li class="blog-archive-list 2019">- 2019年の記事 (34)</li>
+              <li class="blog-archive-list 2018">- 2018年の記事 (34)</li>
+              <li class="blog-archive-list 2017">- 2017年の記事 (34)</li>
+              <li class="blog-archive-list 2016 bottom">- 2016年の記事 (34)</li> -->
+            </ul>
+          </div>
           <a href="#scroll-down" class="mouse-scroll center w-inline-block">
             <div class="mouse-dots"></div>
           </a>
@@ -148,6 +158,7 @@
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   
 <script>
+
   $.ajax({url: "http://160.16.80.140/content", success: function(data){
 
     var entries = JSON.parse(data).filter(function(item) {
@@ -164,8 +175,37 @@
       return 0
     })
 
+    var numberOfBlogs2016 = 0;
+    var numberOfBlogs2017 = 0;
+    var numberOfBlogs2018 = 0;
+    var numberOfBlogs2019 = 0;
+    var numberOfBlogs2020 = 0;
+
     $.each(latest, function(index, entry) {
       //this wrapped in jQuery will give us the current .letter-q div
+
+      var blogMonth = entry.created_at.substr( 0, 4 );
+
+      if (blogMonth == "2020") {
+        numberOfBlogs2020 += 1;
+      };
+
+      if (blogMonth == "2019") {
+        numberOfBlogs2019 += 1;
+      };
+
+      if (blogMonth == "2018") {
+        numberOfBlogs2018 += 1;
+      };
+
+      if (blogMonth == "2017") {
+        numberOfBlogs2017 += 1;
+      };
+
+      if (blogMonth == "2016") {
+        numberOfBlogs2016 += 1;
+      };
+
       var text = entry.description;
         if (text.length > 120)
           text = text.substring(0, 120) + '...'
@@ -194,7 +234,94 @@
       '</a>'
       );
     });
+
+    $('#blog-archive').append(
+     '<li href="blog.html" class="blog-archive-list 2020 top">- 2020年の記事 (' + numberOfBlogs2020 + ')</li>' +
+     '<li class="blog-archive-list 2019">- 2019年の記事 (' + numberOfBlogs2019 + ')</li>' +
+     '<li class="blog-archive-list 2018">- 2018年の記事 (' + numberOfBlogs2018 + ')</li>' +
+     '<li class="blog-archive-list 2017">- 2017年の記事 (' + numberOfBlogs2017 + ')</li>' +
+     '<li class="blog-archive-list 2016 bottom">- 2016年の記事 (' + numberOfBlogs2016 + ')</li>'
+    );
+
+
+  $('#blog-archive li').click(function(){
+      var month = $(this).text().substr( 2, 4 );;
+      if (month == "2020") {
+        dojQueryAjax(month)
+      } else if (month == "2019") {
+        dojQueryAjax(month)
+      } else if (month == "2018") {
+        dojQueryAjax(month)
+      } else if (month == "2017") {
+        dojQueryAjax(month)
+      } else if (month == "2016") {
+        dojQueryAjax(month)
+      }
+  });
+
+  function dojQueryAjax(selectedMonth) {
+    $.ajax({
+        type: "GET", // GETメソッドで通信
+
+        url: "http://160.16.80.140/content", // 取得先のURL
+
+        cache: false, // キャッシュしないで読み込み
+
+        // 通信成功時に呼び出されるコールバック
+        success: function (data) {
+
+          // blogをからにする
+            $('#blog').html('');
+
+            $.each(latest, function(index, entry) {
+
+              var month = entry.created_at.substr( 0, 4 );
+
+              if (month == selectedMonth) {
+                var text = entry.description;
+                if (text.length > 10)
+                  text = text.substring(0, 120) + '...'
+                $('#blog').append(
+                '<a href="detail_post.html?id=' + entry.id + '" class="blog-wrapper with-margin w-inline-block">\n' +
+                '  <div><img class="blog-image" src="' + 'http://160.16.80.140/' + entry.picture.replace('public', 'storage') + '" alt=""></div>\n' +
+                '  <div class="blog-content">\n' +
+                '    <div class="text-block">' + entry.created_at + ' | ' + entry.incharge + '</div>\n' +
+                '    <h3 class="blog-title">' + entry.subject + '</h3>\n' +
+                '    <div>\n' +
+                '      <p>' + text + '</p>\n' +
+                '    </div>\n' +
+                '    <div class="top-margin half">\n' +
+                '      <div class="button-other">\n' +
+                '        <div class="line-bottom" style="width: 0%;"></div>\n' +
+                '        <div class="line-left" style="height: 0%;"></div>\n' +
+                '        <div class="line-top" style="width: 0%;"></div>\n' +
+                '        <div class="line-right" style="height: 0%;"></div>\n' +
+                '        <div class="overlay-button" style="height: 0%;"></div>\n' +
+                '        <div class="text-wrapper">\n' +
+                '          <div class="button-text" style="color: rgb(129, 129, 135);">もっと詳しく</div>\n' +
+                '        </div>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
+                '  </div>\n' +
+                '</a>'
+                );
+              }
+            });
+
+        },
+        // 通信エラー時に呼び出されるコールバック
+        error: function () {
+
+            alert("Ajax通信エラー");
+
+        }
+    });
+  }
+    
   }});
+
+  
+
 </script>
 </body>
 </html>

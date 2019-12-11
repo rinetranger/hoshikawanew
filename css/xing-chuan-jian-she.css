@@ -2455,7 +2455,7 @@ figure {
   display: inline-block;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 5px 26px;
+  padding: 17px 26px;
   background-color: transparent;
   box-shadow: inset 0 0 0 1px #777676;
   color: #818187;
@@ -2815,6 +2815,19 @@ html.w-mod-js *[data-ix="fade-on-scroll-2"] {
   .categories-holder.blogs-holder.news-holder {
     overflow: hidden;
   }
+  .scroll-down-wrapper {	
+    padding-top: 0px;	
+  }
+  .text-block-3 {	
+    margin-top: 0px;	
+    padding-top: 0px;	
+  }	
+  .blog-archive {	
+    margin-top: 0px;	
+    margin-bottom: -26px;	
+    padding-top: 0px;	
+    padding-bottom: 0px;	
+  }
 }
 
 @media (max-width: 767px) {
@@ -2958,7 +2971,9 @@ html.w-mod-js *[data-ix="fade-on-scroll-2"] {
     display: flex;
   }
   .container {
-    display: block;
+    margin-top: 0px;	
+    padding-top: 0px;	
+    padding-bottom: 0px;
   }
   .container.center.in-sub-banner {
     top: 65%;
@@ -3111,6 +3126,11 @@ html.w-mod-js *[data-ix="fade-on-scroll-2"] {
   .scroll-down-wrapper {
     margin-top: 0px;
     padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .mouse-scroll.center {	
+    margin-top: 10px;	
+    margin-bottom: -80px;	
   }
   .mouse-scroll.center-mobile {
     display: none;
@@ -3272,6 +3292,11 @@ html.w-mod-js *[data-ix="fade-on-scroll-2"] {
   .column-5 {
     text-align: left;
   }
+  .archive {	
+    margin-top: 0px;	
+    padding-top: 0px;	
+    padding-bottom: 0px;	
+  }
 }
 
 #w-node-24a0a17d7580-a17d757c {
@@ -3287,4 +3312,48 @@ html.w-mod-js *[data-ix="fade-on-scroll-2"] {
 
 .small-title {
   color: darkcyan;
+}
+
+.archive {	
+  display: inline-block;	
+  width: 140px;	
+  margin-top: 31px;	
+  padding-bottom: 50px;	
+  float: none;	
+  border-style: none;	
+  border-color: #fff;	
+  border-top-width: 1px;	
+  border-bottom-width: 1px;	
+  border-left-width: 1px;	
+  border-radius: 0px;	
+  text-align: center;	
+}	
+.text-block-3 {	
+  color: #000;	
+  font-size: 16px;	
+  font-weight: 400;	
+}	
+.blog-archive {	
+  width: 99.953%;	
+  margin-top: 5px;	
+  padding-left: 0px;	
+  border-style: solid none;	
+  border-width: 1px;	
+  border-color: #121217 #fff;	
+  list-style-type: none;	
+}	
+.blog-archive-list {	
+  padding-top: 0px;	
+  padding-bottom: 2px;	
+  color: #000;	
+  text-align: left;	
+  cursor: pointer;	
+}	
+.blog-archive-list.top {	
+  margin-top: 5px;	
+  color: #000;	
+}	
+.blog-archive-list.bottom {	
+  margin-bottom: 0px;	
+  padding-bottom: 5px;	
 }
