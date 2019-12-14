@@ -989,8 +989,8 @@ figure {
   background-position: 0px 0px;
   background-size: cover;
   background-repeat: repeat;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  /* -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); */
   color: #fff;
 }
 
