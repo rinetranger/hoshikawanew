@@ -889,8 +889,8 @@ figure {
 .about-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  /* display: -ms-flexbox;
+  display: flex; */
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -1814,8 +1814,8 @@ figure {
   z-index: 1;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  /* display: -ms-flexbox;
+  display: flex; */
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -3356,4 +3356,7 @@ html.w-mod-js *[data-ix="fade-on-scroll-2"] {
 .blog-archive-list.bottom {	
   margin-bottom: 0px;	
   padding-bottom: 5px;	
+}
+.center-text {
+  text-align: left;
 }

@@ -105,12 +105,9 @@
         <div class="container w-container">
           <div class="archive">
             <div class="text-block-3">アーカイブ</div>
+            <!--ここにコンテンツが入る -->
             <ul id="blog-archive" class="blog-archive">
-              <!-- <li class="blog-archive-list 2020 top">- 2020年の記事 (34)</li>
-              <li class="blog-archive-list 2019">- 2019年の記事 (34)</li>
-              <li class="blog-archive-list 2018">- 2018年の記事 (34)</li>
-              <li class="blog-archive-list 2017">- 2017年の記事 (34)</li>
-              <li class="blog-archive-list 2016 bottom">- 2016年の記事 (34)</li> -->
+
             </ul>
           </div>
           <a href="#scroll-down" class="mouse-scroll center w-inline-block">
@@ -121,13 +118,10 @@
     </div>
     <div id="scroll-down" class="section less-bottom-padding">
       <div class="container w-container">
-
         <!--ここにコンテンツが入る -->
         <div class="blog-big-wrapper" id="blog">
 
         </div>
-
-
       </div>
     </div>
     <div class="footer">
@@ -207,7 +201,7 @@
       };
 
       var text = entry.description;
-        if (text.length > 120)
+      if (text.length > 120)
           text = text.substring(0, 120) + '...'
       $('#blog').append(
       '<a href="detail_post.html?id=' + entry.id + '" class="blog-wrapper with-margin w-inline-block">\n' +
@@ -216,7 +210,7 @@
       '    <div class="text-block">' + entry.created_at + ' | ' + entry.incharge + '</div>\n' +
       '    <h3 class="blog-title">' + entry.subject + '</h3>\n' +
       '    <div>\n' +
-      '      <p>' + text + '</p>\n' +
+      '      <p class="center-text">' + text + '</p>\n' +
       '    </div>\n' +
       '    <div class="top-margin half">\n' +
       '      <div class="button-other">\n' +
@@ -244,39 +238,31 @@
     );
 
 
-  $('#blog-archive li').click(function(){
-      var month = $(this).text().substr( 2, 4 );;
-      if (month == "2020") {
-        dojQueryAjax(month)
-      } else if (month == "2019") {
-        dojQueryAjax(month)
-      } else if (month == "2018") {
-        dojQueryAjax(month)
-      } else if (month == "2017") {
-        dojQueryAjax(month)
-      } else if (month == "2016") {
-        dojQueryAjax(month)
-      }
-  });
+    $('#blog-archive li').click(function(){
+        var month = $(this).text().substr( 2, 4 );;
+        if (month == "2020") {
+          dojQueryAjax(month)
+        } else if (month == "2019") {
+          dojQueryAjax(month)
+        } else if (month == "2018") {
+          dojQueryAjax(month)
+        } else if (month == "2017") {
+          dojQueryAjax(month)
+        } else if (month == "2016") {
+          dojQueryAjax(month)
+        }
+    });
 
   function dojQueryAjax(selectedMonth) {
     $.ajax({
         type: "GET", // GETメソッドで通信
-
         url: "http://160.16.80.140/content", // 取得先のURL
-
         cache: false, // キャッシュしないで読み込み
-
-        // 通信成功時に呼び出されるコールバック
         success: function (data) {
-
           // blogをからにする
             $('#blog').html('');
-
             $.each(latest, function(index, entry) {
-
               var month = entry.created_at.substr( 0, 4 );
-
               if (month == selectedMonth) {
                 var text = entry.description;
                 if (text.length > 10)
@@ -288,7 +274,7 @@
                 '    <div class="text-block">' + entry.created_at + ' | ' + entry.incharge + '</div>\n' +
                 '    <h3 class="blog-title">' + entry.subject + '</h3>\n' +
                 '    <div>\n' +
-                '      <p>' + text + '</p>\n' +
+                '      <p class="center-text">' + text + '</p>\n' +
                 '    </div>\n' +
                 '    <div class="top-margin half">\n' +
                 '      <div class="button-other">\n' +
@@ -307,13 +293,9 @@
                 );
               }
             });
-
         },
-        // 通信エラー時に呼び出されるコールバック
         error: function () {
-
             alert("Ajax通信エラー");
-
         }
     });
   }
