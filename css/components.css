@@ -1786,7 +1786,11 @@ textarea.w-select {
   }
 }
 .w-dyn-empty {
+<<<<<<< HEAD
   padding: 10px;
+=======
+  padding: 10px;z
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
   background-color: #dddddd;
 }
 .w-dyn-hide {
@@ -1804,4 +1808,8 @@ textarea.w-select {
 }
 .detail-blog-image {
   max-height: 600px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395

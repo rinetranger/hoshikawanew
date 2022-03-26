@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <!--  Last Published: Wed Nov 20 2022 07:56:08 GMT+0000 (Coordinated Universal Time)  -->
+=======
+<!--  Last Published: Wed Nov 20 2019 07:56:08 GMT+0000 (Coordinated Universal Time)  -->
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
 <html data-wf-page="5d65d978071de8ec3aec4224" data-wf-site="5d65d977071de8e7f0ec4214">
 <head>
   <meta charset="utf-8">
@@ -97,14 +101,22 @@
         <div>
           <div class="top-title-wrapper no-margin">
             <div class="text-block">Blog<br></div>
+<<<<<<< HEAD
             <h1 class="sub-heading-biger">ブログ<br></h1>
+=======
+            <h1 class="sub-heading-biger">ブログ<br>‍<br></h1>
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
           </div>
         </div>
       </div><img src="images/shape-3.png" width="100" alt="" class="shape-4 in-sub w-hidden-tiny"><img src="images/shape-4.png" width="100" alt="" class="shape-5 w-hidden-tiny">
       <div class="scroll-down-wrapper">
         <div class="container w-container">
           <div class="archive">
+<<<<<<< HEAD
             <div class="text-block-3">ブログ</div>
+=======
+            <div class="text-block-3">アーカイブ</div>
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
             <!--ここにコンテンツが入る -->
             <ul id="blog-archive" class="blog-archive">
 
@@ -132,7 +144,11 @@
           </div>
           <div class="w-col w-col-4">
             <div>
+<<<<<<< HEAD
               <p class="copyright">© 2022 by hoshikawa Construction co.ltd.All Right Reserved<a href="https://www.facebook.com/" target="_blank"><br></a></p>
+=======
+              <p class="copyright">© 2019 by hoshikawa Construction co.ltd.All Right Reserved<a href="https://www.facebook.com/" target="_blank"><br></a></p>
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
             </div>
           </div>
           <div class="w-col w-col-5">
@@ -167,6 +183,7 @@
         return -1
       }
       return 0
+<<<<<<< HEAD
     });
 
     
@@ -177,17 +194,29 @@
     var numberOfBlogs2022 = 0;
     
   
+=======
+    })
+
+    var numberOfBlogs2016 = 0;
+    var numberOfBlogs2017 = 0;
+    var numberOfBlogs2018 = 0;
+    var numberOfBlogs2019 = 0;
+    var numberOfBlogs2020 = 0;
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
 
     $.each(latest, function(index, entry) {
       //this wrapped in jQuery will give us the current .letter-q div
 
       var blogMonth = entry.created_at.substr( 0, 4 );
+<<<<<<< HEAD
       if (blogMonth == "2022") {
         numberOfBlogs2022 += 1;
       };
       if (blogMonth == "2021") {
         numberOfBlogs2021 += 1;
       };
+=======
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
 
       if (blogMonth == "2020") {
         numberOfBlogs2020 += 1;
@@ -197,12 +226,29 @@
         numberOfBlogs2019 += 1;
       };
 
+<<<<<<< HEAD
     
+=======
+      if (blogMonth == "2018") {
+        numberOfBlogs2018 += 1;
+      };
+
+      if (blogMonth == "2017") {
+        numberOfBlogs2017 += 1;
+      };
+
+      if (blogMonth == "2016") {
+        numberOfBlogs2016 += 1;
+      };
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
 
       var text = entry.description;
       if (text.length > 120)
           text = text.substring(0, 120) + '...'
+<<<<<<< HEAD
       
+=======
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
       $('#blog').append(
       '<a href="detail_post.html?id=' + entry.id + '" class="blog-wrapper with-margin w-inline-block">\n' +
       '  <div><img class="blog-image" src="' + 'http://160.16.80.140/' + entry.picture.replace('public', 'storage') + '" alt=""></div>\n' +
@@ -225,6 +271,7 @@
       '      </div>\n' +
       '    </div>\n' +
       '  </div>\n' +
+<<<<<<< HEAD
       '</a>\n'
       );
       
@@ -236,10 +283,23 @@
      '<li class="blog-archive-list 2020">- 2020年の記事 (' + numberOfBlogs2020 + ')</li>' +
      '<li class="blog-archive-list 2019">- 2019年の記事 (' + numberOfBlogs2019 + ')</li>' 
      
+=======
+      '</a>'
+      );
+    });
+
+    $('#blog-archive').append(
+     '<li href="blog.html" class="blog-archive-list 2020 top">- 2020年の記事 (' + numberOfBlogs2020 + ')</li>' +
+     '<li class="blog-archive-list 2019">- 2019年の記事 (' + numberOfBlogs2019 + ')</li>' +
+     '<li class="blog-archive-list 2018">- 2018年の記事 (' + numberOfBlogs2018 + ')</li>' +
+     '<li class="blog-archive-list 2017">- 2017年の記事 (' + numberOfBlogs2017 + ')</li>' +
+     '<li class="blog-archive-list 2016 bottom">- 2016年の記事 (' + numberOfBlogs2016 + ')</li>'
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
     );
 
 
     $('#blog-archive li').click(function(){
+<<<<<<< HEAD
         var month = $(this).text().substr( 2, 4 );
         if (month == "2022") {
           dojQueryAjax(month)
@@ -252,6 +312,21 @@
         } 
     });
     
+=======
+        var month = $(this).text().substr( 2, 4 );;
+        if (month == "2020") {
+          dojQueryAjax(month)
+        } else if (month == "2019") {
+          dojQueryAjax(month)
+        } else if (month == "2018") {
+          dojQueryAjax(month)
+        } else if (month == "2017") {
+          dojQueryAjax(month)
+        } else if (month == "2016") {
+          dojQueryAjax(month)
+        }
+    });
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
 
   function dojQueryAjax(selectedMonth) {
     $.ajax({
@@ -261,7 +336,10 @@
         success: function (data) {
           // blogをからにする
             $('#blog').html('');
+<<<<<<< HEAD
             
+=======
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
             $.each(latest, function(index, entry) {
               var month = entry.created_at.substr( 0, 4 );
               if (month == selectedMonth) {
@@ -297,7 +375,10 @@
         },
         error: function () {
             alert("Ajax通信エラー");
+<<<<<<< HEAD
            
+=======
+>>>>>>> 4a460d44feacda074dd601c56d34b404aadaa395
         }
     });
   }
